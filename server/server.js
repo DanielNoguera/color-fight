@@ -9,7 +9,7 @@ var server = http.createServer(app);
 var io = socketIO(server);
 var socket = io;
 app.use(express.static(publicPath));
-var color = 'red';
+var color = 'No one has set a color for a long time, make sure you let everyone know what the best color is!';
 function update() {
   io.emit('colorr', color)
   };
@@ -46,4 +46,4 @@ server.listen(port, () => {
 //git push -u origin master
 //heroku create
 //git push heroku master
-//
+//heroku git:remote -a aqueous-cliffs-48607
