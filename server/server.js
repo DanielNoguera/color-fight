@@ -9,7 +9,7 @@ var server = http.createServer(app);
 var io = socketIO(server);
 var socket = io;
 app.use(express.static(publicPath));
-var color = 'No one has set a color for a long time, make sure you let everyone know what the best color is!';
+var color = 'No one has set a color in over a hour';
 function update() {
   io.emit('colorr', color)
   };
@@ -20,16 +20,17 @@ function update() {
 io.on('connection', (socket) => {
   console.log('user in');
   socket.on('disconnect', () => {
-    console.log('oh no!');
+    console.log
+    ('oh no!');
   });
   socket.on('colorc', (colorm) => {
     color = colorm;
-    console.log('ok now');
+    update();
   });
-  setInterval(update, 1000
-  );
-
-});
+    socket.on('requp', () => {
+      update();
+    });
+  });
 server.listen(port, () => {
   console.log(`Yo! Daniel!  Server is up on port ${port} !`);
 });

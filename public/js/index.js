@@ -9,6 +9,7 @@ socket.on('disconnect', function () {
 socket.on('colorr', function (tcc) {
   document.getElementById("truecolor").innerHTML = tcc;
 });
+socket.emit("requp")
 function change(colorll) {
   socket.emit('colorc', colorll);
   console.log('ok');
